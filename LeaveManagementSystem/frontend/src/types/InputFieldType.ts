@@ -3,5 +3,7 @@ export default interface InputFieldType {
     handleChange:(e: React.ChangeEvent<HTMLInputElement>) => void,
     name:string,
     type:string,
+    isReadOnly?:boolean,
+    isAutoFocus?:boolean,
     placeholder:string
 }

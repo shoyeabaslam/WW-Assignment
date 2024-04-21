@@ -1,22 +1,10 @@
 import  { FormEvent, useEffect, useState } from 'react';
 import SideBar from '../../components/SideBar';
-import ISideBarData from '../../types/ISideBarData';
-import { FaWpforms } from "react-icons/fa6";
-import { MdPreview } from "react-icons/md";
-import InputField from '../../components/InputField';
 
-const LeaveApplicationSideBarData:ISideBarData[] = [
-  {
-    name:'Leave Application',
-    url:'leave-application',
-    icon:<FaWpforms/>
-  },
-  {
-    name:'View Leave Requests',
-    url:'view-leaves',
-    icon:<MdPreview/>
-  }
-]
+import InputField from '../../components/InputField';
+import { LeaveApplicationData } from '../../utils/SideBarModels/LeaveApplicationData';
+
+
 
 const LeaveApplicationForm = () => {
   const [formData, setFormData] = useState({
@@ -90,16 +78,16 @@ const LeaveApplicationForm = () => {
 
   return (
   
-<SideBar data = {LeaveApplicationSideBarData}>
+<SideBar data = {LeaveApplicationData}>
 
 <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-xl">
       <h2 className="text-2xl font-semibold text-center mb-5">Leave Application Form</h2>
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-2 gap-4">
-         <InputField name='empId' type='text' inputValue={formData.empId} handleChange={handleChange} placeholder='Employee Id'/>
-         <InputField name='empName' type='text' inputValue={formData.empName} handleChange={handleChange} placeholder='Employee Email'/>
-         <InputField name='empPhone' type='text' inputValue={formData.empPhone} handleChange={handleChange} placeholder='Employee Phone'/>
-         <InputField name='managerEmail' type='email' inputValue={formData.managerEmail} handleChange={handleChange} placeholder='Manager Email'/>
+         <InputField name='empId' type='text' inputValue={formData.empId} handleChange={handleChange} placeholder='Employee Id' isReadOnly={true}/>
+         <InputField name='empName' type='text' inputValue={formData.empName} handleChange={handleChange} placeholder='Employee Email' isReadOnly={true}/>
+         <InputField name='empPhone' type='text' inputValue={formData.empPhone} handleChange={handleChange} placeholder='Employee Phone' isReadOnly={true}/>
+         <InputField name='managerEmail' type='email' inputValue={formData.managerEmail} handleChange={handleChange} placeholder='Manager Email' isAutoFocus={true}/>
          <InputField name='fromDate' type='date' inputValue={formData.fromDate} handleChange={handleChange} placeholder='From Date'/>
         
           {/* from date radio buttons */}

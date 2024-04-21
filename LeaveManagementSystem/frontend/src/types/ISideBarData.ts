@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
+import { IconType } from "react-icons";
 
 export default interface ISideBarData{
     name:string,
     url:string,
-    icon:ReactNode
+    icon:IconType
 }

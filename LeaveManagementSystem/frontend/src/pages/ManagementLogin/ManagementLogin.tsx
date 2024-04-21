@@ -27,7 +27,7 @@ const LoginPage = () => {
     <div className="min-h-screen flex items-center justify-center  py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full">
         <form className="border px-5 py-4  backdrop:blur-sm rounded-xl shadow-lg bg-white/100" onSubmit={handleSubmit}>
-            <h1 className='text-xl font-bold text-center mb-5'>Employee Login</h1>
+            <h1 className='text-xl font-bold text-center mb-5'>Management Login</h1>
             
            <InputField name='email' inputValue={formData.email} type={'email'} handleChange={handleChange} placeholder='Email Address'/>
            <InputField name='password' inputValue={formData.password}  type={'password'} handleChange={handleChange} placeholder='Password'/>
@@ -36,7 +36,7 @@ const LoginPage = () => {
               <button type="submit" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 Login
               </button>
-              <Link className='text-center underline py-3' to='management-login'>Go to management panel</Link>
+              <Link className='text-center underline py-3' to='/'>Go to employee panel</Link>
             </div>
         </form>
       </div>
